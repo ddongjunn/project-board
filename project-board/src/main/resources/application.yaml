@@ -19,24 +19,13 @@ spring:
     password: 1234
   jpa:
     defer-datasource-initialization: true
-    hibernate:
-      ddl-auto: create
+    hibernate.ddl-auto: create
     #open-in-view: false
     show-sql: true
     properties:
-      hibernate:
-        format_sql: true
-        default_batch_fetch_size: 100
-  h2:
-    console:
-      enabled: false
-  sql:
-    init:
-      mode: always
-  data:
-    rest:
-      base-path: /api
-      detection-strategy: annotated
+      hibernate.format_sql: true
+      hibernate.default_batch_fetch_size: 100
+  sql.init.mode: always
 
 
 
