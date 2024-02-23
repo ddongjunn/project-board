@@ -120,7 +120,7 @@ class ArticleServiceTest {
     void givenModifiedArticleInfo_whenUpdatingArticle_thenUpdatesArticle() {
         // Given
         Article article = createArticle();
-        ArticleDto dto = createArticleDto("새 타이틀", "새 내용", "#springboot");
+        ArticleDto dto = createArticleDto("new title", "new content", "#springboot");
         given(articleRepository.getReferenceById(dto.id())).willReturn(article);
 
         // When
@@ -131,6 +131,7 @@ class ArticleServiceTest {
                 .hasFieldOrPropertyWithValue("title", dto.title())
                 .hasFieldOrPropertyWithValue("content", dto.content())
                 .hasFieldOrPropertyWithValue("hashtag", dto.hashtag());
+
         then(articleRepository).should().getReferenceById(dto.id());
     }
 
