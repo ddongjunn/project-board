@@ -1,7 +1,7 @@
 package com.board.projectboard.repository;
 
 import com.board.projectboard.domain.Article;
-import com.board.projectboard.domain.config.JpaConfig;
+import com.board.projectboard.config.JpaConfig;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

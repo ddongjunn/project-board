@@ -1,4 +1,4 @@
-package com.board.projectboard.domain.config;
+package com.board.projectboard.config;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
