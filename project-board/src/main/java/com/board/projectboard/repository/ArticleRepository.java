@@ -2,7 +2,6 @@ package com.board.projectboard.repository;
 
 import com.board.projectboard.domain.Article;
 import com.board.projectboard.domain.QArticle;
-import com.jayway.jsonpath.JsonPath;
 import com.querydsl.core.types.dsl.DateTimeExpression;
 import com.querydsl.core.types.dsl.StringExpression;
 import org.springframework.data.domain.Page;
@@ -34,9 +33,10 @@ public interface ArticleRepository extends
 
     Page<Article> findByContentContaining(String searchKeyword, Pageable pageable);
 
-    Page<Article> findBy_AndUserAccount_UserIdContaining(String searchKeyword, Pageable pageable);
+    Page<Article> findByUserAccount_UserIdContaining(String searchKeyword, Pageable pageable);
 
-    Page<Article> findBy_AndUserAccount_NickNameContaining(String searchKeyword, Pageable pageable);
+    Page<Article> findByUserAccount_NicknameContaining(String searchKeyword, Pageable pageable);
 
     Page<Article> findByHashtag(String s, Pageable pageable);
+
 }
