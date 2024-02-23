@@ -1,6 +1,6 @@
 package com.board.projectboard.controller;
 
-import com.board.projectboard.domain.config.SecurityConfig;
+import com.board.projectboard.config.SecurityConfig;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
