@@ -63,7 +63,7 @@ public record BoardPrincipal(
 
     @Override
     public String getUsername() {
-        return password;
+        return username;
     }
 
     @Override

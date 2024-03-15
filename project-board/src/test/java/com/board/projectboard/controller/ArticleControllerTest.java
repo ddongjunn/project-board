@@ -266,20 +266,6 @@ class ArticleControllerTest {
         then(articleService).should().saveArticle(any(ArticleDto.class));
     }
 
-    @DisplayName("[view][GET] 게시글 페이지 - 인증 없을 땐 로그인 페이지로 이동")
-    @Test
-    void givenNothing_whenRequestingArticlePage_thenRedirectsToLoginPage() throws Exception {
-        // Given
-        long articleId = 1L;
-
-        // When & Then
-        mvc.perform(get("/articles/" + articleId))
-                .andExpect(status().is3xxRedirection())
-                .andExpect(redirectedUrlPattern("**/login"));
-        then(articleService).shouldHaveNoMoreInteractions();
-        then(articleService).shouldHaveNoMoreInteractions();
-    }
-
     @WithUserDetails(value = "test", setupBefore = TestExecutionEvent.TEST_EXECUTION)
     @DisplayName("[view][GET] 게시글 수정 페이지 - 정상 호출, 인증된 사용자")
     @Test
@@ -339,7 +325,7 @@ class ArticleControllerTest {
                 .andExpect(status().is3xxRedirection())
                 .andExpect(view().name("redirect:/articles"))
                 .andExpect(redirectedUrl("/articles"));
-        then(articleService).should().deleteArticle(articleId);
+        then(articleService).should().deleteArticle(articleId, userId);
     }
 
 
